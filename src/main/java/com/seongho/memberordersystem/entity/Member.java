@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 public class Member {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
@@ -16,9 +15,6 @@ public class Member {
     private String password;
     private String name;
     private String phoneNumber;
-
-    @OneToMany(mappedBy = "member")
-    private List<Order> orderList;
 
     public Member() {}
 
@@ -58,11 +54,4 @@ public class Member {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
-    }
 }
