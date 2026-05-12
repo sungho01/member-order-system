@@ -1,9 +1,6 @@
 package com.seongho.memberordersystem.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Product {
@@ -14,6 +11,9 @@ public class Product {
     private String name;
     private int price;
     private int stock;
+
+    @Version
+    private Long version;
 
     public Product(){}
 
@@ -43,5 +43,9 @@ public class Product {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public Long getVersion() {
+        return version;
     }
 }
